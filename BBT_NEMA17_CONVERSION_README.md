@@ -3,6 +3,7 @@
 These parts replace the repository's small stepper mount and arm while retaining the original `blinds clasp A.stl` and `blinds clasp B.stl`.
 
 - `BBT_NEMA17_motor_mount.stl`: 42 x 42 mm NEMA17 mount, 31 mm hole spacing, adjustable frame slots
+- `BBT_NEMA17_motor_box_mount.stl`: boxed NEMA17 cradle matching the illustrated enclosure-style mount
 - `BBT_NEMA17_arm.stl`: 5.3 mm shaft bore with 32, 44, and 56 mm linkage-radius holes
 - `BBT_NEMA17_link.stl`: replacement link between the crank arm and the original clasp
 - `BBT_NEMA17_shaft_spacer.stl`: optional spacer/hub

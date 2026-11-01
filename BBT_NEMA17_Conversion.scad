@@ -75,7 +75,32 @@ module shaft_spacer(){
     }
 }
 
+module motor_box_mount(){
+    // Boxed cradle matching the concept diagram: NEMA17 body sits in a
+    // protected pocket, with the shaft and crank exiting the front.
+    difference(){
+        union(){
+            rounded_box([62,62,58],5);
+            // frame mounting ears on the lower sides
+            translate([6,31,8]) rotate([90,0,0]) cylinder(d=11,h=10,center=true);
+            translate([56,31,8]) rotate([90,0,0]) cylinder(d=11,h=10,center=true);
+        }
+        // motor pocket; front flange remains 6 mm thick
+        translate([7,7,6]) cube([48,48,55]);
+        // front shaft opening and NEMA17 31 mm bolt pattern
+        translate([31,31,2]) cylinder(d=24,h=12,center=true);
+        for(x=[31-15.5,31+15.5],y=[31-15.5,31+15.5])
+            translate([x,y,3]) cylinder(d=3.5,h=14,center=true);
+        // rear cable opening
+        translate([31,31,57]) cube([18,18,10],center=true);
+        // frame attachment slots
+        translate([6,31,8]) rotate([90,0,0]) slot(24,5,18);
+        translate([56,31,8]) rotate([90,0,0]) slot(24,5,18);
+    }
+}
+
 if(part=="motor_mount") motor_mount();
 if(part=="arm") arm();
 if(part=="link") link();
 if(part=="shaft_spacer") shaft_spacer();
+if(part=="motor_box_mount") motor_box_mount();
